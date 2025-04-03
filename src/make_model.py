@@ -54,6 +54,13 @@ def train_model():
         'r2': r2_score(y_test, y_pred)
     }
 
+
+    #save df statistics, used for UI
+    stats = df.describe().loc[['mean', 'min', 'max']]
+    with open(os.path.join(config.DATAFRAME_PATH, "df_stats.pickle"), "wb") as file: 
+           pickle.dump(stats, file)
+
+
     # Connect to the database
     conn = sqlite3.connect(config.DATABASE_PATH)
 

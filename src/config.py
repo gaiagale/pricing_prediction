@@ -15,6 +15,9 @@ RAW_TABLE = "raw_prices"
 # Saved models
 MODELS_PATH = "../models/"
 
+# Saved stats
+DATAFRAME_PATH = "../data/"
+
 # Predictions Table Name
 PREDICTIONS_TABLE = "predictions"
 
