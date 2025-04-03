@@ -32,7 +32,7 @@ if st.button("Next"):
         user_longitude = st.number_input("Insert longitude", min_value = x6_min, max_value = x6_max, value = X['X6 longitude'].iloc[0])
         
         if st.button('Predict'):
-            list = [X['X2 house age'].iloc[0], X['X3 distance to the nearest MRT station'].iloc[0], X['X4 number of convenience stores'].iloc[0], user_latitude, user_longitude]
+            list = [X['X1 transaction date'].iloc[0], X['X2 house age'].iloc[0], X['X3 distance to the nearest MRT station'].iloc[0], X['X4 number of convenience stores'].iloc[0], user_latitude, user_longitude]
             prediction = lin_reg.predict(list)
             st.success(f"Your house price of unit area is: {prediction}")
 
@@ -42,7 +42,7 @@ if st.button("Next"):
         user_convenience_stores = st.number_input("Insert number of convenience stores", min_value = np.float64(0), max_value = np.float64(10), value = X['X4 number of convenience stores'].iloc[0])
         
         if st.button('Predict'):
-            list = [user_house_age, user_MRT, user_convenience_stores, X['X5 latitude'].iloc[0], X['X6 longitude'].iloc[0]]
+            list = [X['X1 transaction date'].iloc[0], user_house_age, user_MRT, user_convenience_stores, X['X5 latitude'].iloc[0], X['X6 longitude'].iloc[0]]
             prediction = lin_reg.predict(list)
             st.success(f"Your house price of unit area is: {prediction}")
 
@@ -54,6 +54,6 @@ if st.button("Next"):
         user_convenience_stores = st.number_input("Insert number of convenience stores", min_value = np.float64(0), max_value = np.float64(10), value = X['X4 number of convenience stores'].iloc[0])
         
         if st.button('Predict'):
-            list = [X['X2 house age'].iloc[0], X['X3 distance to the nearest MRT station'].iloc[0], X['X4 number of convenience stores'].iloc[0], X['X5 latitude'].iloc[0], X['X6 longitude'].iloc[0]]
+            list = [X['X1 transaction date'].iloc[0], user_house_age, user_MRT, user_convenience_stores, user_latitude, user_longitude]
             prediction = lin_reg.predict(list)
             st.success(f"Your house price of unit area is: {prediction}")
